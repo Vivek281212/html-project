@@ -1,0 +1,23 @@
+name: First - Deployment on EC2  
+
+on: #push, pull_request, create, delete
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: checkout from github repo
+      uses: actions/checkout@v4
+
+    - name: run some commands
+      run: |
+        whoami
+        ls -al
+        pwd
+        cat index.html
+        
+    
